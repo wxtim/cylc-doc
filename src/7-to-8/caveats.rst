@@ -8,11 +8,6 @@ Cylc 8. These features will be re-implemented in future releases.
 Cylc Flow
 ---------
 
-Trigger Edit
-   Functionality removed pending reimplementation.
-
-   * https://github.com/cylc/cylc-flow/issues/3751
-
 Multiple Flows
    The new :term:`scheduler` can manage multiple flows in the workflow graph.
    Commands and options for interacting with flows are still being refined.
@@ -23,22 +18,14 @@ Browser Based UI
 
 The old "GUI" has been replaced by the new browser-based "UI".
 
-Graph View
-   There is no graph view in the new Cylc UI as yet. A new graph view will be
-   developed providing both "live" (AKA ``cylc gui``) and "offline"
-   (AKA ``cylc graph``) functionalities.
-
-   * https://github.com/cylc/cylc-ui/issues/74
-   * https://github.com/cylc/cylc-ui/issues/82
-
 Static Graph Visualization
    Not yet reimplemented for Cylc 8. As an interim measure the
    ``cylc graph`` command can generate a basic PNG image of a workflow
    graph if Graphviz is installed in the Cylc environment.
 
 Log Files
-   The ability to view job logs and other files in the web UI is yet to be
-   implemented. For the moment:
+   The ability to view job logs and other files in the web UI has only been
+   implemented for the most resent job submitted by each task. For the moment:
 
    * use ``cylc cat-log``
    * look in your ``cylc-run`` directory
@@ -46,7 +33,7 @@ Log Files
      with Cylc 8)
 
 Multiple Selection
-   Multiple selection is yet to be implemented, however, it is possible
+   Multiple selection is yet >to be implemented, however, it is possible
    to issue action for multiple tasks (e.g. ``kill``) without using
    multiple selection:
 
@@ -54,19 +41,20 @@ Multiple Selection
    * Find the action you want to call (e.g. kill).
    * Click the pencil symbol next to this action.
    * Edit the workflows/cycles/tasks/jobs in the form and press submit.
-
    * https://github.com/cylc/cylc-ui/issues/434
+
 Installing Workflows
    At present there is no way to view or install
    :term:`source workflows <source directory>` in the UI.
+
 Rose Edit
    Rose Edit is awaiting reimplementation in the UI.
-Trigger Edit
-   Functionality removed pending reimplementation.
+
 Xtrigger Visibility
    Xtriggers are not yet visible in the UI.
 
    * https://github.com/cylc/cylc-ui/issues/331
+
 Documentation / Orientation Guide
    Some form of documentation will be provided within the UI itself.
 
@@ -89,6 +77,7 @@ Performance
    update will follow in due course.
 
    * https://github.com/cylc/cylc-flow/issues/3527
+
 GScan
    The old ``cylc gscan`` GUI has been removed. You can now find the gscan
    display on the left-hand side of the Cylc UI.
