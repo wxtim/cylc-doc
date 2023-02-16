@@ -64,6 +64,10 @@ numbers are planned for future releases.
 Edit Runtime
 ^^^^^^^^^^^^
 
+.. note::
+
+   This feature replaces trigger-edit from Cylc 7.
+
 The web UI now has a command for editing the :cylc:conf:`[runtime]` section
 of a task or family.
 
@@ -77,11 +81,11 @@ Combined Commands
 
 Two new commands have been added as short-cuts for common working patterns:
 
-``cylc vip`` 
+``cylc vip``
    Validate, install and plays a workflow, equivalent to:
 
    .. code-block:: bash
-   
+
       cylc validate <path>
       cylc install <path>
       cylc play <id>
