@@ -67,7 +67,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: docs
-          ref: ${{ fromJson(needs.set-meta-releases.outputs.meta-releases.{{meta_release}}) }}
+          ref: ${{ matrix.meta_release["cylc/cylc-doc"] }}
 
       - name: install dependencies
         uses: ./docs/.github/actions/install-dependencies
