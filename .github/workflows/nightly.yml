@@ -85,7 +85,8 @@ jobs:
           cylc_rose: true
           cylc_rose_opts: ''
           cylc_doc: true
-          cylc_doc_opts: $(git -C docs rev-parse HEAD)
+          cylc_doc_opts: ''
+          cylc_doc_tag: $(git -C docs rev-parse HEAD)
           metomi_rose: true
           metomi_rose_opts: ''
 
