@@ -75,7 +75,7 @@ jobs:
       #   run: pip install "${{ github.workspace }}/docs[all]"
 
       - name: install libs to document
-        uses: cylc/release-actions/install-cylc-components@v1
+        uses: wxtim/release-actions/install-cylc-components@v1
         with:
           meta_release: ${{ matrix.meta_release }}
           cylc_flow: true
