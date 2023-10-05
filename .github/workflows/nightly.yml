@@ -74,6 +74,8 @@ jobs:
       # - name: install cylc-doc
       #   run: pip install "${{ github.workspace }}/docs[all]"
 
+      # - name: get_doc_hash./
+
       - name: install libs to document
         uses: wxtim/release-actions/install-cylc-components@v1
         with:
@@ -86,7 +88,7 @@ jobs:
           cylc_rose_opts: ''
           cylc_doc: true
           cylc_doc_opts: ''
-          cylc_doc_tag: $(git -C docs rev-parse HEAD)
+          cylc_doc_tag: $GITHUB_SHA
           metomi_rose: true
           metomi_rose_opts: ''
 
