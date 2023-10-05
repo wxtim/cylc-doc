@@ -84,7 +84,6 @@ jobs:
           cylc_rose_opts: ''
           cylc_doc: true
           cylc_doc_opts: ''
-          cylc_doc_tag: ${{ github.sha }}
           metomi_rose: true
           metomi_rose_opts: ''
 
