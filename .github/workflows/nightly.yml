@@ -63,6 +63,11 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: checkout cylc-doc
+        uses: actions/checkout@v3
+        with:
+          path: docs
+
       - name: install dependencies
         uses: ./docs/.github/actions/install-dependencies
 
