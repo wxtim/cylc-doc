@@ -63,18 +63,8 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: checkout cylc-doc
-        uses: actions/checkout@v3
-        with:
-          path: docs
-
-      # - name: install dependencies
-      #   uses: ./docs/.github/actions/install-dependencies
-
-      # - name: install cylc-doc
-      #   run: pip install "${{ github.workspace }}/docs[all]"
-
-      # - name: get_doc_hash./
+      - name: install dependencies
+        uses: ./docs/.github/actions/install-dependencies
 
       - name: install libs to document
         uses: wxtim/release-actions/install-cylc-components@v1
