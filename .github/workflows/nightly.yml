@@ -101,7 +101,7 @@ jobs:
           PAGE="${{ github.workspace }}/gh-pages"  \
 
           cd "$DOCS"
-          rm -r doc
+          rm -r doc || true
           ln -s "$PAGE" doc
 
       - name: configure git
