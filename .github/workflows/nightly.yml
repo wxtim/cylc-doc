@@ -64,18 +64,18 @@ jobs:
           python-version: '3.9'
 
       - name: checkout cylc-doc
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: docs
 
       - name: install dependencies
         uses: ./docs/.github/actions/install-dependencies
 
-      - name: install cylc-doc
-        run: pip install "${{ github.workspace }}/docs[all]"
+      # - name: install cylc-doc
+      #   run: pip install "${{ github.workspace }}/docs[all]"
 
       - name: install libs to document
-        uses: cylc/release-actions/install-cylc-components@v1
+        uses: wxtim/release-actions/install-cylc-components@v1
         with:
           meta_release: ${{ matrix.meta_release }}
           cylc_flow: true
@@ -84,11 +84,13 @@ jobs:
           cylc_uiserver_opts: ''
           cylc_rose: true
           cylc_rose_opts: ''
+          cylc_doc: true
+          cylc_doc_opts: ''
           metomi_rose: true
           metomi_rose_opts: ''
 
       - name: checkout gh-pages branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: gh-pages
@@ -139,7 +141,6 @@ jobs:
           builddir="nightly_${{ matrix.meta_release }}"
           make -C docs \
             html \
-            slides \
             linkcheck \
             SPHINXOPTS="-Wn --keep-going -A sidebar_version_name=${version}" \
             STABLE=false \
