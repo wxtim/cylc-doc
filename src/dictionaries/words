@@ -3,7 +3,6 @@ Popen
 app
 apps
 arg
-args
 auth
 authenticator
 authoriser
@@ -15,11 +14,7 @@ cfg
 changelog
 changelogs
 conf
-config
 configargs
-configs
-coroutine
-coroutines
 cprofile
 ctx
 cyclepoint
@@ -40,8 +35,6 @@ etc
 executables
 facade
 fallback
-filename
-filenames
 filesystem
 filesystems
 fillchar
@@ -75,7 +68,6 @@ iterable
 jitter
 jobscript
 kwarg
-kwargs
 latin
 lifecycle
 linearization
@@ -94,6 +86,7 @@ namespace
 namespaces
 obs
 offline
+ok
 onwards
 packjob
 parameterization
@@ -117,7 +110,6 @@ preloaded
 prempted
 premption
 prepackaged
-prepend
 prepended
 preset
 proc
@@ -186,7 +178,6 @@ symlinking
 symlinks
 taskdef
 templated
-templating
 th
 timeout
 timeouts
@@ -209,7 +200,6 @@ websocket
 websockets
 whitelisting
 whitespace
-workflow
 workflows
 workspaces
 xrandom

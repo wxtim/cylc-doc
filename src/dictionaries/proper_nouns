@@ -33,6 +33,7 @@ Pympler
 Pyro
 pyproject
 rsync
+scp
 sge
 slurm
 Slurm
