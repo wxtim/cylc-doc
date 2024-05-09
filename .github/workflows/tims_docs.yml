@@ -52,8 +52,10 @@ jobs:
           path: cylc-flow
           ref: ${{ inputs.cylc-flow-tag }}
 
-      # - name: install pygraphviz
-      #   run: conda install graphviz pygraphviz -c conda-forge -y
+      - name: install pygraphviz
+        run: |
+          sudo apt install graphviz
+          conda install pygraphviz -c conda-forge -y
 
       - name: install cylc-flow
         run: pip install -e cylc-flow --no-deps
