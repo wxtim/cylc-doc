@@ -23,6 +23,14 @@ name: tims_docs
 
 on:
   workflow_dispatch:
+    inputs:
+      doc-ref:
+        required: false
+        default: foo
+      cylc-flow-tag:
+        required: false
+        default: master
+
 
 jobs:
   deploy:
@@ -31,7 +39,7 @@ jobs:
     defaults:
       run:
         # use login shell for conda activation
-        shell: bash -leo pipefail {0}
+        # shell: bash -leo pipefail {0}
     steps:
       - name: configure python
         uses: actions/setup-python@v5
@@ -46,11 +54,22 @@ jobs:
         with:
           path: cylc-doc
 
-      - name: checkout cylc-doc
+      - name: install cylc-doc
+        run: pip install -e cylc-doc
+
+      - name: checkout cylc-flow
         uses: actions/checkout@v4
         with:
           path: cylc-flow
+          ref: ${{ inputs.cylc-flow-tag }}
+
+      - name: install cylc-flow
+        run: pip install -e cylc-flow
+
+      - name: build-docs
+        run: |
+          cd cylc-doc && make clean html
 
       - name: debug
         run: |
-          tree .
+          ls
