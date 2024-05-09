@@ -46,6 +46,18 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: checkout cylc-flow
+        uses: actions/checkout@v4
+        with:
+          path: cylc-flow
+          ref: ${{ inputs.cylc-flow-tag }}
+
+      - name: import pygraphviz
+        run: conda install pygraphviz -c conda-forge
+
+      - name: install cylc-flow
+        run: pip install -e cylc-flow
+
       - name: configure git
         uses: cylc/release-actions/configure-git@v1
 
@@ -56,15 +68,6 @@ jobs:
 
       - name: install cylc-doc
         run: pip install -e cylc-doc
-
-      - name: checkout cylc-flow
-        uses: actions/checkout@v4
-        with:
-          path: cylc-flow
-          ref: ${{ inputs.cylc-flow-tag }}
-
-      - name: install cylc-flow
-        run: pip install -e cylc-flow
 
       - name: build-docs
         run: |
