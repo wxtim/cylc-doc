@@ -26,18 +26,18 @@ on:
     inputs:
       doc-ref:
         required: false
-        default: foo
+        default: 'foo'
       cylc-flow-tag:
         required: false
-        default: master
+        default: 'master'
 
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    defaults:
-      run:
+    # defaults:
+      # run:
         # use login shell for conda activation
         # shell: bash -leo pipefail {0}
     steps:
