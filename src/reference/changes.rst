@@ -22,6 +22,33 @@ For more detail see the component changelogs:
 
 ----------
 
+Cylc 8.4
+--------
+
+
+Skip Mode
+^^^^^^^^^
+
+You can now configure run modes on a task-by-task basis using
+`[runtime][task]run mode`.
+
+This allows you to override task modes using `cylc broadcast`.
+
+Skip mode makes a task complete immediately. Skip mode use cases
+include, but are not limited to:
+
+
+* Bypassing tasks you do not want to run (or rerun): This is like the Cylc 7
+  pattern of using `cylc reset ... --state succeeded`.
+* Dummy tasks to control graph structure. For example the graph
+  `FAMILY_A:succeed-all => FAMILY_B` can make a workflow inefficient.
+  It may be better written as `FAMILY_A:succeed_all => skip_task => FAMILY_B`.
+
+You can control skip mode settings using the `[runtime][task][skip]`.
+This allows you to configure which outputs you want the skipped task to emit.
+
+
+
 Cylc 8.3
 --------
 
